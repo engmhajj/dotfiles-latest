@@ -1,4 +1,3 @@
-
 # ~/.config is used by neovim, alacritty and karabiner
 mkdir -p ~/.config
 # Alacritty is inside its own dir
@@ -16,6 +15,7 @@ mkdir -p ~/.config/yazi
 mkdir -p ~/.config/btop
 mkdir -p ~/.config/fastfetch
 mkdir -p ~/.config/sesh
+mkdir -p ~/github/skitty
 
 # Create the symlinks I normally use
 # ~/.config dir holds nvim, neofetch, alacritty configs

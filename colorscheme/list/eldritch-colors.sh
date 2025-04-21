@@ -39,7 +39,7 @@ linkarzu_color07="#314154"
 # Comments
 linkarzu_color09="#a5afc2"
 # Terminal and neovim background
-linkarzu_color10="#212337"
+linkarzu_color10="#000000"
 # Underline spellbad
 linkarzu_color11="#f16c75"
 # Underline spellcap

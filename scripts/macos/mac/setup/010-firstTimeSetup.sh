@@ -32,7 +32,7 @@ noColor="\033[0m"
 
 # User and email that will be used in github for commits
 GIT_USERNAME="engmhajj"
-EMAIL_FILE="$HOME/.git_user_email"
+EMAIL_FILE="$HOME/.eng.mhajj@gmail.com"
 
 # -----------------------------------------------------------------------------
 # -----------------------------------------------------------------------------
@@ -187,7 +187,7 @@ echo
 SSH_CONFIG_FILE="$HOME/.ssh/config"
 GITHUB_SSH_KEY_FILE="$HOME/.ssh/key-github-pers"
 GITHUB_SSH_KEY_NAME=$(basename "$GITHUB_SSH_KEY_FILE")
-PERS_SSH_KEY_FILE="$HOME/.ssh/keykrishna"
+PERS_SSH_KEY_FILE="$HOME/.ssh/mohamad"
 PERS_SSH_KEY_NAME=$(basename "$PERS_SSH_KEY_FILE")
 
 # Check if the .ssh directory exists, if not create it

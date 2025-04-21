@@ -534,7 +534,7 @@ if [ -f "$(brew --prefix)/opt/chruby/share/chruby/chruby.sh" ]; then
   # Set default Ruby version using chruby
   # Replace 'ruby-3.1.3' with the version you have or want to use
   # You can also put a conditional check here if you want
-  chruby ruby-3.1.3
+  chruby ruby-3.4.1
 fi
 
 # NOTE: fzf alias the search engine added by Mohamad

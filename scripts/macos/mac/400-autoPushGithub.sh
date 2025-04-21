@@ -48,8 +48,8 @@ log_message() {
 # receiving some weird notifications about
 # fatal: mmap failed: Resource deadlock avoided
 REPO_LIST=(
-  "$HOME/github-latest/skitty"
-  "$HOME/github-latest/obsidian_main"
+  "$HOME/github/skitty"
+  "$HOME/github/obsidian_main"
 )
 
 # Define the push interval in seconds

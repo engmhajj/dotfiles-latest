@@ -47,6 +47,8 @@ set -g default-terminal "${TERM}"
 set -gq allow-passthrough on
 # This is related to the `tmux_show_only_in_active_window = true,` config in
 set -g visual-activity off # image.nvim
+# set-hook -g pane-focus-in 'select-pane -P "bg=$linkarzu_color10,fg=white"'
+# set-hook -g pane-focus-out 'select-pane -P "bg=$linkarzu_color07,fg=default"'
 
 # This enables vim nagivation
 # If for example I'm in the scrolling mode (yellow) can navigate with vim motions
@@ -94,6 +96,9 @@ set-option -g history-limit 10000
 # Tmux prefix key
 unbind b
 set -g prefix C-a
+# create a new session
+unbind n
+bind n command-prompt -p "New Session:" "new-session -A -s '%%'"
 
 # bind  killall tmux            # kill all session
 
@@ -215,10 +220,13 @@ bind Q setw synchronize-panes
 
 # Go to previous window, I'm using 'p' to change to window 4
 unbind [
-bind ] previous-window
+bind [ previous-window
+
+unbind ]
+bind ] next-window
 # swap between window
-unbind n
-bind-key C-n swap-pane -s :+.top \; rotate-window -Ut :+
+#unbind n
+#bind-key C-n swap-pane -s :+.top \; rotate-window -Ut :+
 # Resize pane to zoom so it occupies the entire screen
 unbind m
 bind -r m resize-pane -Z
@@ -393,7 +401,7 @@ unbind C-o
 # bind-key -r C-o run-shell "$tmux_sessionizer ~/github/linkarzu.github.io"
 bind-key -r C-o run-shell "$tmux_sessionizer /System/Volumes/Data/mnt/github_nfs/engmhajj.github.io"
 unbind C-p
-bind-key -r C-p run-shell "$tmux_sessionizer ~/github/scripts"
+bind-key -r C-p run-shell "$tmux_sessionizer ~/github/dotfiles-latest/scripts"
 unbind C-t
 bind-key -r C-t run-shell "$tmux_sessionizer ~/github/obsidian_main"
 unbind 4
@@ -517,6 +525,8 @@ set -g @plugin 'tmux-plugins/tpm'
 # https://github.com/2KAbhishek/tmux2k
 
 set -g @plugin '2kabhishek/tmux2k'
+# use a theme
+#set -g @tmux2k-theme 'onedark'
 # to show icons only
 set -g @tmux2k-icons-only true
 
@@ -528,7 +538,7 @@ set -g @tmux2k-window-list-right-sep  # alternate window list right sep
 set -g @tmux2k-show-powerline false
 
 # set session icon, accpets: `session`, 'window`, or any string
-set -g @tmux2k-session-icon " #W" # `#W` for window name
+set -g @tmux2k-session-icon " " # `#W` for window name
 
 # set the left and right plugin sections
 set -g @tmux2k-left-plugins "session cpu ram cpu-temp"
@@ -559,6 +569,7 @@ set -g @plugin 'christoomey/vim-tmux-navigator'
 # # allow tmux-ressurect to capture pane contents
 # set -g @resurrect-capture-pane-contents 'on'
 
+#run-shell "~/github/dotfiles-latest/tmux/tools/linkarzu/set_tmux_colors.sh"
 # automatically saves sessions for you every 15 minutes (this must be the last plugin)
 # https://github.com/tmux-plugins/tmux-continuum
 #set -g @plugin 'tmux-plugins/tmux-continuum'
