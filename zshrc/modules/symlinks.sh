@@ -1,3 +1,4 @@
+
 # ~/.config is used by neovim, alacritty and karabiner
 mkdir -p ~/.config
 # Alacritty is inside its own dir
@@ -105,7 +106,7 @@ create_symlink ~/github/dotfiles-latest/sesh ~/.config/sesh
 
 # # This is on the other repo where I keep my ssh config files
 # I commented this as I don't have access to this repo in all the hosts
-# ln -snf ~/github/dotfiles/sshconfig-pers ~/.ssh/config 2>&1 >/dev/null
+ln -snf ~/github/dotfiles-latest/sshconfig-pers ~/.ssh/config 2>&1 >/dev/null
 
 # # I'm keeping the old manual commands here
 # ln -snf ~/github/dotfiles-latest/zshrc/zshrc-file.sh ~/.zshrc >/dev/null 2>&1

@@ -20,17 +20,17 @@ expected, it seems to be working as expected
 
 ```bash
 # These are files
-ls -l /Users/krishna/.vimrc*
-ls -l /Users/krishna/github/obsidian_main/.obsidian.vimrc*
-ls -l /Users/krishna/.zshrc*
-ls -l /Users/krishna/.tmux.conf*
-ls -l /Users/krishna/.config/alacritty/alacritty.toml*
-ls -l /Users/krishna/.yabairc*
+ls -l /Users/mohamadelhajhassan/.vimrc*
+ls -l /Users/mohamadelhajhassan/github/obsidian_main/.obsidian.vimrc*
+ls -l /Users/mohamadelhajhassan/.zshrc*
+ls -l /Users/mohamadelhajhassan/.tmux.conf*
+ls -l /Users/mohamadelhajhassan/.config/alacritty/alacritty.toml*
+ls -l /Users/mohamadelhajhassan/.yabairc*
 
 # Below ones are directories
-ls -ld /Users/krishna/.config/nvim*
-ls -ld /Users/krishna/.hammerspoon*
-ls -ld /Users/krishna/.config/karabiner*
+ls -ld /Users/mohamadelhajhassan/.config/nvim*
+ls -ld /Users/mohamadelhajhassan/.hammerspoon*
+ls -ld /Users/mohamadelhajhassan/.config/karabiner*
 ```
 
 ### Deletion original files and directories
@@ -40,16 +40,16 @@ ls -ld /Users/krishna/.config/karabiner*
 
 ```bash
 # These are files
-rm /Users/krishna/.vimrc
-rm /Users/krishna/github/obsidian_main/.obsidian.vimrc
-rm /Users/krishna/.tmux.conf
-rm /Users/krishna/.config/alacritty/alacritty.toml
-rm /Users/krishna/.yabairc
+rm /Users/mohamadelhajhassan/.vimrc
+rm /Users/mohamadelhajhassan/github/obsidian_main/.obsidian.vimrc
+rm /Users/mohamadelhajhassan/.tmux.conf
+rm /Users/mohamadelhajhassan/.config/alacritty/alacritty.toml
+rm /Users/mohamadelhajhassan/.yabairc
 
 # Below ones are directories
-rm -r /Users/krishna/.config/nvim
-rm -r /Users/krishna/.hammerspoon
-rm -r /Users/krishna/.config/karabiner
+rm -r /Users/mohamadelhajhassan/.config/nvim
+rm -r /Users/mohamadelhajhassan/.hammerspoon
+rm -r /Users/mohamadelhajhassan/.config/karabiner
 ```
 
 ### Simulate replacement of existing dirs and symlinks
@@ -60,60 +60,60 @@ backup funcionality
 
 ```bash
 # These are files
-rm /Users/krishna/.vimrc
-rm /Users/krishna/github/obsidian_main/.obsidian.vimrc
-rm /Users/krishna/.tmux.conf
-rm /Users/krishna/.config/alacritty/alacritty.toml
-rm /Users/krishna/.yabairc
+rm /Users/mohamadelhajhassan/.vimrc
+rm /Users/mohamadelhajhassan/github/obsidian_main/.obsidian.vimrc
+rm /Users/mohamadelhajhassan/.tmux.conf
+rm /Users/mohamadelhajhassan/.config/alacritty/alacritty.toml
+rm /Users/mohamadelhajhassan/.yabairc
 
 # Below ones are directories
-rm -r /Users/krishna/.config/nvim
-rm -r /Users/krishna/.hammerspoon
-rm -r /Users/krishna/.config/karabiner
+rm -r /Users/mohamadelhajhassan/.config/nvim
+rm -r /Users/mohamadelhajhassan/.hammerspoon
+rm -r /Users/mohamadelhajhassan/.config/karabiner
 
-echo "# Test file auto created" > /Users/krishna/.vimrc
-echo "# Test file auto created" > /Users/krishna/github/obsidian_main/.obsidian.vimrc
-echo "# Test file auto created" > /Users/krishna/.tmux.conf
-echo "# Test file auto created" > /Users/krishna/.config/alacritty/alacritty.toml
-echo "# Test file auto created" > /Users/krishna/.yabairc
-mkdir -p /Users/krishna/.config/nvim
-echo "echo 'Test content'" > /Users/krishna/.config/nvim/testfile.sh
-mkdir -p /Users/krishna/.hammerspoon
-echo "echo 'Test content'" > /Users/krishna/.hammerspoon/testfile.sh
-mkdir -p /Users/krishna/.config/karabiner
-echo "echo 'Test content'" > /Users/krishna/.config/karabiner/testfile.sh
+echo "# Test file auto created" > /Users/mohamadelhajhassan/.vimrc
+echo "# Test file auto created" > /Users/mohamadelhajhassan/github/obsidian_main/.obsidian.vimrc
+echo "# Test file auto created" > /Users/mohamadelhajhassan/.tmux.conf
+echo "# Test file auto created" > /Users/mohamadelhajhassan/.config/alacritty/alacritty.toml
+echo "# Test file auto created" > /Users/mohamadelhajhassan/.yabairc
+mkdir -p /Users/mohamadelhajhassan/.config/nvim
+echo "echo 'Test content'" > /Users/mohamadelhajhassan/.config/nvim/testfile.sh
+mkdir -p /Users/mohamadelhajhassan/.hammerspoon
+echo "echo 'Test content'" > /Users/mohamadelhajhassan/.hammerspoon/testfile.sh
+mkdir -p /Users/mohamadelhajhassan/.config/karabiner
+echo "echo 'Test content'" > /Users/mohamadelhajhassan/.config/karabiner/testfile.sh
 ```
 
 ### See all the files and backups
 
 ```bash
 # These are files
-ls -l /Users/krishna/.vimrc*
-ls -l /Users/krishna/github/obsidian_main/.obsidian.vimrc*
-ls -l /Users/krishna/.zshrc*
-ls -l /Users/krishna/.tmux.conf*
-ls -l /Users/krishna/.config/alacritty/alacritty.toml*
-ls -l /Users/krishna/.yabairc*
+ls -l /Users/mohamadelhajhassan/.vimrc*
+ls -l /Users/mohamadelhajhassan/github/obsidian_main/.obsidian.vimrc*
+ls -l /Users/mohamadelhajhassan/.zshrc*
+ls -l /Users/mohamadelhajhassan/.tmux.conf*
+ls -l /Users/mohamadelhajhassan/.config/alacritty/alacritty.toml*
+ls -l /Users/mohamadelhajhassan/.yabairc*
 
 # Below ones are directories
-ls -ld /Users/krishna/.config/nvim*
-ls -ld /Users/krishna/.hammerspoon*
-ls -ld /Users/krishna/.config/karabiner*
+ls -ld /Users/mohamadelhajhassan/.config/nvim*
+ls -ld /Users/mohamadelhajhassan/.hammerspoon*
+ls -ld /Users/mohamadelhajhassan/.config/karabiner*
 ```
 
 ### Delete all the backups
 
 ```bash
 # These are files
-rm /Users/krishna/.vimrc_backup_*
-rm /Users/krishna/github/obsidian_main/.obsidian.vimrc_backup_*
-rm /Users/krishna/.zshrc.backup
-rm /Users/krishna/.tmux.conf_backup_*
-rm /Users/krishna/.config/alacritty/alacritty.toml_backup_*
-rm /Users/krishna/.yabairc_backup_*
+rm /Users/mohamadelhajhassan/.vimrc_backup_*
+rm /Users/mohamadelhajhassan/github/obsidian_main/.obsidian.vimrc_backup_*
+rm /Users/mohamadelhajhassan/.zshrc.backup
+rm /Users/mohamadelhajhassan/.tmux.conf_backup_*
+rm /Users/mohamadelhajhassan/.config/alacritty/alacritty.toml_backup_*
+rm /Users/mohamadelhajhassan/.yabairc_backup_*
 
 # Below ones are directories
-rm -r /Users/krishna/.config/nvim_backup_*
-rm -r /Users/krishna/.hammerspoon_backup_*
-rm -r /Users/krishna/.config/karabiner_backup_*
+rm -r /Users/mohamadelhajhassan/.config/nvim_backup_*
+rm -r /Users/mohamadelhajhassan/.hammerspoon_backup_*
+rm -r /Users/mohamadelhajhassan/.config/karabiner_backup_*
 ```

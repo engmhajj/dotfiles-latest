@@ -1,3 +1,4 @@
+
 # To get the default values
 # ghostty +show-config --default --docs > ~/github/dotfiles-latest/ghostty/config-default
 
@@ -193,7 +194,7 @@ confirm-close-surface = false
 #  work in all environments; see the additional notes below for more
 #  information.
 # keybind = global:cmd+s=toggle_quick_terminal
-keybind = cmd+s=toggle_quick_terminal
+keybind = cmd+`=toggle_quick_terminal
 
 # If `true`, the *Option* key will be treated as *Alt*. This makes terminal
 # sequences expecting *Alt* to work properly, but will break Unicode input
@@ -263,4 +264,3 @@ keybind = super+r=reload_config
 #    configurations are required for this style.
 # 
 macos-icon = official
-

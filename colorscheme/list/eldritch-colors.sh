@@ -58,3 +58,6 @@ linkarzu_color17="#282b43"
 linkarzu_color24="#F712FF"
 # Background of inactive tmux pane
 linkarzu_color25=#232e3b
+
+# Wallpaper for this colorscheme
+wallpaper="$HOME/Desktop/nvim-config-files/Wallpapers/pirates/thom-schneider.jpg"

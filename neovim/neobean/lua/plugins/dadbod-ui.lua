@@ -7,12 +7,12 @@
 https://github.com/tpope/vim-dadbod
 Vim plugin for interacting with databases
 Connections are specified with a single URL
-:DB mysql://root:pass@mysql.home.linkarzu.com:3310 SHOW DATABASES;
+:DB mysql://root:pass@mysql.home.engmhajj.com:3310 SHOW DATABASES;
 
 https://github.com/kristijanhusak/vim-dadbod-ui
 To add a new dtabase, toggle DBUI, then hit capital `A` to add a new connection
-mysql://root:pass@mysql.home.linkarzu.com:3310
-mysql://root:pass@mariadb.home.linkarzu.com:3309/
+mysql://root:pass@mysql.home.engmhajj.com:3310
+mysql://root:pass@mariadb.home.engmhajj.com:3309/
 postgres://postgres:pass@postgres.home.linkarzu.com:5432/
 Then you will be asked for the name of the database that will show in the toogle
 

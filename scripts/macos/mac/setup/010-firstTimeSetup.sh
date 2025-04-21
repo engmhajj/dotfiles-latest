@@ -10,7 +10,7 @@
 # Filename: ~/Library/Mobile Documents/com~apple~CloudDocs/github/macos-setup/mac/setup/010-firstTimeSetup.sh
 # ~/Library/Mobile Documents/com~apple~CloudDocs/github/macos-setup/mac/setup/010-firstTimeSetup.sh
 
-# https://github.com/linkarzu/macos-setup/blob/master/010-firstTimeSetup.sh
+# https://github.com/engmhajj/macos-setup/blob/master/010-firstTimeSetup.sh
 
 boldGreen="\033[1;32m"
 boldYellow="\033[1;33m"
@@ -31,7 +31,7 @@ noColor="\033[0m"
 ###############################################################################
 
 # User and email that will be used in github for commits
-GIT_USERNAME="Linkarzu"
+GIT_USERNAME="engmhajj"
 EMAIL_FILE="$HOME/.git_user_email"
 
 # -----------------------------------------------------------------------------
@@ -249,7 +249,7 @@ mkdir -p ~/github
 # Function to clone or update repositories
 clone_and_update_repo() {
   local repo_name=$1
-  local git_repo="git@github.com:linkarzu/$repo_name.git"
+  local git_repo="git@github.com:engmhajj/$repo_name.git"
   local repo_path="$HOME/github/$repo_name"
 
   echo
@@ -438,7 +438,7 @@ echo "Getting access to my ssh config"
 echo "########################################################################"
 
 # This is on the other repo where I keep my ssh config files
-ln -snf ~/github/dotfiles/sshconfig-pers ~/.ssh/config >/dev/null 2>&1
+ln -snf ~/github/dotfiles-latest/sshconfig-pers ~/.ssh/config >/dev/null 2>&1
 echo
 echo -e "${boldPurple}>>>>>>>>>>>>>>>>>>>>>>>>>>${noColor}"
 echo "symlink created"
@@ -676,13 +676,13 @@ yarn run build
 echo
 echo -e "${boldPurple}>>>>>>>>>>>>>>>>>>>>>>>>>>${noColor}"
 echo "Creating and populating the LaunchAgent plist for Karabiner..."
-cat <<EOF >~/Library/LaunchAgents/com.linkarzu.karabiner.plist
+cat <<EOF >~/Library/LaunchAgents/com.engmhajj.karabiner.plist
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
   <dict>
     <key>Label</key>
-    <string>com.linkarzu.karabiner</string>
+    <string>com.engmhajj.karabiner</string>
     <key>ProgramArguments</key>
     <array>
       <string>/opt/homebrew/bin/yarn</string>
@@ -692,9 +692,9 @@ cat <<EOF >~/Library/LaunchAgents/com.linkarzu.karabiner.plist
     <key>RunAtLoad</key>
     <true/>
     <key>StandardOutPath</key>
-    <string>/tmp/karabiner_linkarzu.out.log</string>
+    <string>/tmp/karabiner_engmhajj.out.log</string>
     <key>StandardErrorPath</key>
-    <string>/tmp/karabiner_linkarzu.err.log</string>
+    <string>/tmp/karabiner_engmhajj.err.log</string>
     <key>WorkingDirectory</key>
     <string>$HOME/github/dotfiles-latest/karabiner/mxstbr</string>
     <key>EnvironmentVariables</key>
@@ -711,16 +711,16 @@ EOF
 echo
 echo -e "${boldPurple}>>>>>>>>>>>>>>>>>>>>>>>>>>${noColor}"
 echo "Loading LaunchAgent plist..."
-launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.linkarzu.karabiner.plist
+launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.engmhajj.karabiner.plist
 
 # Instructions for logs and unloading
 echo -e "
 To check the logs, use:
-cat /tmp/karabiner_linkarzu.out.log
-cat /tmp/karabiner_linkarzu.err.log
+cat /tmp/karabiner_engmhajj.out.log
+cat /tmp/karabiner_engmhajj.err.log
 
 To unload the task, use:
-launchctl bootout gui/$(id -u) ~/Library/LaunchAgents/com.linkarzu.karabiner.plist
+launchctl bootout gui/$(id -u) ~/Library/LaunchAgents/com.engmhajj.karabiner.plist
 
 Then delete the plist file if necessary."
 

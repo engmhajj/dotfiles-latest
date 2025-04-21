@@ -3,7 +3,7 @@
 # automaticaly push changes to some github repos
 #
 # Check if the com.linkarzu.autoPushGithub.plist file exists, create it if missing
-PLIST_PATH="$HOME/Library/LaunchAgents/com.linkarzu.autoPushGithub.plist"
+PLIST_PATH="$HOME/Library/LaunchAgents/com.engmhajj.autoPushGithub.plist"
 SCRIPT_PATH="$HOME/github/dotfiles-latest/scripts/macos/mac/400-autoPushGithub.sh"
 
 # NOTE: If you modify the StartInterval below, make sure to also change it in
@@ -16,7 +16,7 @@ if [ ! -f "$PLIST_PATH" ]; then
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>com.linkarzu.autoPushGithub</string>
+    <string>com.engmhajj.autoPushGithub</string>
     <key>ProgramArguments</key>
     <array>
         <string>$SCRIPT_PATH</string>
@@ -38,7 +38,7 @@ fi
 # launchctl list | grep -i autopush
 # First column (-) means the job is NOT currently running. Normal as our script runs every X seconds
 # Second Column (0) means the job ran successfully the last execution, other values mean error
-if ! launchctl list | grep -q "com.linkarzu.autoPushGithub"; then
+if ! launchctl list | grep -q "com.engmhajj.autoPushGithub"; then
   echo "Loading $PLIST_PATH..."
   launchctl load "$PLIST_PATH"
   echo "$PLIST_PATH loaded."
@@ -53,7 +53,7 @@ fi
 # 1 hour = 3600 s
 INTERVAL_SEC=7200
 PLIST_ID="tmuxKillSessions"
-PLIST_NAME="com.linkarzu.$PLIST_ID.plist"
+PLIST_NAME="com.engmhajj.$PLIST_ID.plist"
 PLIST_LABEL="${PLIST_NAME%.plist}"
 PLIST_PATH="$HOME/Library/LaunchAgents/$PLIST_NAME"
 SCRIPT_PATH="$HOME/github/dotfiles-latest/tmux/tools/linkarzu/$PLIST_ID.sh"
@@ -100,31 +100,31 @@ fi
 # Not sure why its not unloading it so I just remove the plist file
 # rm $PLIST_PATH
 
-install_xterm_kitty_terminfo() {
-  # Attempt to get terminfo for xterm-kitty
-  if ! infocmp xterm-kitty &>/dev/null; then
-    echo "xterm-kitty terminfo not found. Installing..."
-    # Create a temp file
-    tempfile=$(mktemp)
-    # Download the kitty.terminfo file
-    # https://github.com/kovidgoyal/kitty/blob/master/terminfo/kitty.terminfo
-    if curl -o "$tempfile" https://raw.githubusercontent.com/kovidgoyal/kitty/master/terminfo/kitty.terminfo; then
-      echo "Downloaded kitty.terminfo successfully."
-      # Compile and install the terminfo entry for my current user
-      if tic -x -o ~/.terminfo "$tempfile"; then
-        echo "xterm-kitty terminfo installed successfully."
-      else
-        echo "Failed to compile and install xterm-kitty terminfo."
-      fi
-    else
-      echo "Failed to download kitty.terminfo."
-    fi
-    # Remove the temporary file
-    rm "$tempfile"
-  fi
-}
-install_xterm_kitty_terminfo
-
+# install_xterm_kitty_terminfo() {
+#   # Attempt to get terminfo for xterm-kitty
+#   if ! infocmp xterm-kitty &>/dev/null; then
+#     echo "xterm-kitty terminfo not found. Installing..."
+#     # Create a temp file
+#     tempfile=$(mktemp)
+#     # Download the kitty.terminfo file
+#     # https://github.com/kovidgoyal/kitty/blob/master/terminfo/kitty.terminfo
+#     if curl -o "$tempfile" https://raw.githubusercontent.com/kovidgoyal/kitty/master/terminfo/kitty.terminfo; then
+#       echo "Downloaded kitty.terminfo successfully."
+#       # Compile and install the terminfo entry for my current user
+#       if tic -x -o ~/.terminfo "$tempfile"; then
+#         echo "xterm-kitty terminfo installed successfully."
+#       else
+#         echo "Failed to compile and install xterm-kitty terminfo."
+#       fi
+#     else
+#       echo "Failed to download kitty.terminfo."
+#     fi
+#     # Remove the temporary file
+#     rm "$tempfile"
+#   fi
+# }
+# install_xterm_kitty_terminfo
+#
 # Open man pages in neovim, if neovim is installed
 if command -v nvim &>/dev/null; then
   export MANPAGER='nvim +Man!'
@@ -201,8 +201,8 @@ fi
 export HOMEBREW_NO_AUTO_UPDATE="1"
 
 # Stuff that I want to load, but not to have visible in my public dotfiles
-if [ -f "$HOME/Library/Mobile Documents/com~apple~CloudDocs/github/.zshrc_local" ]; then
-  source "$HOME/Library/Mobile Documents/com~apple~CloudDocs/github/.zshrc_local"
+if [ -f "$HOME/github/.zshrc_local" ]; then
+  source "$HOME/github/.zshrc_local"
 fi
 
 # Configuration below is local only, not in icloud
@@ -217,7 +217,7 @@ export PATH="$JAVA_HOME/bin:$PATH"
 
 # This was auto added by LM Studio CLI (lms), but I manually moved it to this
 # file
-export PATH="$PATH:/Users/linkarzu/.lmstudio/bin"
+export PATH="$PATH:/Users/mohamadelhajhassan/.lmstudio/bin"
 
 # You can use NVIM_APPNAME=nvim-NAME to maintain multiple configurations.
 #
@@ -536,3 +536,29 @@ if [ -f "$(brew --prefix)/opt/chruby/share/chruby/chruby.sh" ]; then
   # You can also put a conditional check here if you want
   chruby ruby-3.1.3
 fi
+
+# NOTE: fzf alias the search engine added by Mohamad
+#
+alias s='v $(fzf --preview="bat --color=always {}")'
+
+# Added buy me
+
+# fzf is a teminal search engine
+#alias s = 'v $(fzf --preview="bat --color=always {}")'
+
+# Path to your Oh My Zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+#
+## Which plugins would you like to load?
+## Standard plugins can be found in $ZSH/plugins/
+## Custom plugins may be added to $ZSH_CUSTOM/plugins/
+## Example format: plugins=(rails git textmate ruby lighthouse)
+## Add wisely, as too many plugins slow down shell startup.
+plugins=(git zsh-syntax-highlighting tmux)
+source $ZSH/oh-my-zsh.sh
+
+# Created by `pipx` on 2025-04-19 09:12:33
+export PATH="$PATH:/Users/mohamadelhajhassan/.local/bin"
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"

@@ -10,7 +10,7 @@ end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 -- Set the python3_host_prog variable
-vim.g.python3_host_prog = "~/.venvs/neovim/bin/python"
+vim.g.python3_host_prog = "/opt/homebrew/opt/python@3.13/libexec/bin/python"
 
 require("lazy").setup({
   spec = {
@@ -26,7 +26,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.editor.mini-diff" },
     { import = "lazyvim.plugins.extras.editor.snacks_picker" },
     { import = "lazyvim.plugins.extras.lang.docker" },
-    { import = "lazyvim.plugins.extras.lang.go" },
+    -- { import = "lazyvim.plugins.extras.lang.go" },
     { import = "lazyvim.plugins.extras.lang.json" },
     { import = "lazyvim.plugins.extras.lang.markdown" },
     { import = "lazyvim.plugins.extras.lang.python" },

@@ -953,7 +953,7 @@ vim.keymap.set({ "n", "v", "i" }, "<M-z>", function()
   local fileName = vim.fn.expand("%:t") -- Gets the name of the file
   local goProjectPath = filePath:gsub("^~/", ""):gsub("/[^/]+$", "") -- Removes the ~/ at the start and the filename at the end
   -- Add .com to github and insert username
-  goProjectPath = goProjectPath:gsub("github", "github.com/linkarzu")
+  goProjectPath = goProjectPath:gsub("github", "github.com/engmhajj")
   -- Add "go mod init" to the beginning
   goProjectPath = "go mod init " .. goProjectPath
   local lineToInsert = "Filename: " .. filePath
@@ -1418,7 +1418,7 @@ end, { desc = "[P]Rename image under cursor" })
 -- IMGUR_CLIENT_SECRET="wwwwww"
 --
 -- Path to your environment variables file
-local env_file_path = vim.fn.expand("~/Library/Mobile Documents/com~apple~CloudDocs/github/imgur_credentials")
+local env_file_path = vim.fn.expand("~/github/imgur_credentials")
 -- Configuration variables
 -- update these names to match the names you have in the file above
 local access_token_var = "IMGUR_ACCESS_TOKEN"

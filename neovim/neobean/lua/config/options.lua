@@ -86,7 +86,7 @@ if vim.g.neovim_mode == "skitty" then
   -- vim.opt.winbar = "%#WinBar1# %t%*%=%#WinBar1# linkarzu.com %*"
   -- Set the winbar to display the current file name on the left (without the extension) and "linkarzu.com" aligned to the right
   vim.opt.winbar =
-    '%#WinBar1# %{luaeval(\'vim.fn.fnamemodify(vim.fn.expand("%:t"), ":r")\')}%*%=%#WinBar1# linkarzu.com %*'
+    '%#WinBar1# %{luaeval(\'vim.fn.fnamemodify(vim.fn.expand("%:t"), ":r")\')}%*%=%#WinBar1# engmhajj.com %*'
 else
   -- I never used relative line numbers, so fuck that
   -- Edit a few days after, I'll give them a try again, so re-enabled them

@@ -66,4 +66,4 @@ linkarzu_color16=#ccfce5
 linkarzu_color24=#06743f
 
 # Wallpaper for this colorscheme
-wallpaper="$HOME/Library/Mobile Documents/com~apple~CloudDocs/Images/wallpapers/official/minty-lemon.jpg"
+wallpaper="$HOME/Desktop/nvim-config-files/Wallpapers/pirates/thom-schneider.jpg"

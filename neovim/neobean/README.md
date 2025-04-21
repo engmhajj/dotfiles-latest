@@ -1,19 +1,19 @@
 # dotfiles-latest/neovim/neobean
 
-<a href="https://dotfyle.com/linkarzu/dotfiles-latest-neovim-neobean">
+<a href="https://dotfyle.com/engmhajj/dotfiles-latest-neovim-neobean">
   <img
-    src="https://dotfyle.com/linkarzu/dotfiles-latest-neovim-neobean/badges/plugins?style=flat"
+    src="https://dotfyle.com/engmhajj/dotfiles-latest-neovim-neobean/badges/plugins?style=flat"
     alt="plugins"
   />
 </a>
 <br>
-<a href="https://dotfyle.com/linkarzu/dotfiles-latest-neovim-neobean">
-  <img src="https://dotfyle.com/linkarzu/dotfiles-latest-neovim-neobean/badges/leaderkey?style=flat"
+<a href="https://dotfyle.com/engmhajj/dotfiles-latest-neovim-neobean">
+  <img src="https://dotfyle.com/engmahjj/dotfiles-latest-neovim-neobean/badges/leaderkey?style=flat"
     alt="leaderkey"
   />
 </a>
 <br>
-<a href="https://dotfyle.com/linkarzu/dotfiles-latest-neovim-neobean">
+<a href="https://dotfyle.com/l/dotfiles-latest-neovim-neobean">
   <img src="https://dotfyle.com/linkarzu/dotfiles-latest-neovim-neobean/badges/plugin-manager?style=flat"
     alt="plugin-manager"
   />

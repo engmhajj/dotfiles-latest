@@ -8,7 +8,7 @@
 
 -- Require the colors.lua module and access the colors directly without
 -- additional file reads
--- local colors = require("config.colors")
+local colors = require("config.colors")
 
 local function augroup(name)
   return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
@@ -71,29 +71,29 @@ vim.api.nvim_create_autocmd("FileType", {
 -- -- This is used to switch between light and dark background colors when the
 -- -- focus is lost or gained, for example when I switch from neovim to a tmux
 -- -- pane on the right, or between 2 neovim splits
--- vim.api.nvim_create_autocmd({ "FocusGained", "FocusLost", "WinEnter", "WinLeave" }, {
---   callback = function(ev)
---     local active_bg = colors.linkarzu_color10 -- darker background
---     local inactive_bg = colors.linkarzu_color07 -- brighter background
---     if ev.event == "FocusGained" or ev.event == "WinEnter" then
---       -- Active window - darker background
---       vim.cmd("hi Normal guibg=" .. active_bg)
---       vim.cmd("hi NormalFloat guibg=" .. active_bg)
---       -- vim.cmd("hi NormalNC guibg=" .. active_bg)
---       -- vim.cmd("hi NormalFloatNC guibg=" .. active_bg)
---       vim.cmd("hi TreesitterContext guibg=" .. active_bg)
---       vim.cmd("hi TreesitterContextLineNumber guibg=" .. active_bg)
---     else
---       -- Inactive window - brighter background
---       vim.cmd("hi Normal guibg=" .. inactive_bg)
---       vim.cmd("hi NormalNC guibg=" .. inactive_bg)
---       vim.cmd("hi NormalFloat guibg=" .. inactive_bg)
---       vim.cmd("hi NormalFloatNC guibg=" .. inactive_bg)
---       vim.cmd("hi TreesitterContext guibg=" .. inactive_bg)
---       vim.cmd("hi TreesitterContextLineNumber guibg=" .. inactive_bg)
---     end
---   end,
--- })
+vim.api.nvim_create_autocmd({ "FocusGained", "FocusLost", "WinEnter", "WinLeave" }, {
+  callback = function(ev)
+    local active_bg = colors.linkarzu_color10 -- darker background
+    local inactive_bg = colors.linkarzu_color07 -- brighter background
+    if ev.event == "FocusGained" or ev.event == "WinEnter" then
+      -- Active window - darker background
+      vim.cmd("hi Normal guibg=" .. active_bg)
+      vim.cmd("hi NormalFloat guibg=" .. active_bg)
+      -- vim.cmd("hi NormalNC guibg=" .. active_bg)
+      -- vim.cmd("hi NormalFloatNC guibg=" .. active_bg)
+      vim.cmd("hi TreesitterContext guibg=" .. active_bg)
+      vim.cmd("hi TreesitterContextLineNumber guibg=" .. active_bg)
+    else
+      -- Inactive window - brighter background
+      vim.cmd("hi Normal guibg=" .. inactive_bg)
+      vim.cmd("hi NormalNC guibg=" .. inactive_bg)
+      vim.cmd("hi NormalFloat guibg=" .. inactive_bg)
+      vim.cmd("hi NormalFloatNC guibg=" .. inactive_bg)
+      vim.cmd("hi TreesitterContext guibg=" .. inactive_bg)
+      vim.cmd("hi TreesitterContextLineNumber guibg=" .. inactive_bg)
+    end
+  end,
+})
 
 -- -- -- This debounce prevents to see the color switch when switching betweeen 2
 -- -- -- buffers. Remember that you'll see the color switch when switching between

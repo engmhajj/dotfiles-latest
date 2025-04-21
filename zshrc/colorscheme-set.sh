@@ -345,7 +345,7 @@ if [ "$UPDATED" = true ]; then
 
   # Set the wallpaper
   if [ -z "$wallpaper" ]; then
-    wallpaper="$HOME/Library/Mobile Documents/com~apple~CloudDocs/Images/wallpapers/official/skyrim-dragon-4.webp"
+    wallpaper="$HOME/Desktop/nvim-config-files/Wallpapers/pirates/thom-schneider.jpg"
   fi
   osascript -e '
   tell application "System Events"

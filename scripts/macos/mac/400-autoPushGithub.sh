@@ -48,8 +48,8 @@ log_message() {
 # receiving some weird notifications about
 # fatal: mmap failed: Resource deadlock avoided
 REPO_LIST=(
-  "$HOME/github/skitty"
-  "$HOME/github/obsidian_main"
+  "$HOME/github-latest/skitty"
+  "$HOME/github-latest/obsidian_main"
 )
 
 # Define the push interval in seconds
@@ -190,7 +190,7 @@ done
 # Display all success messages in a single notification
 if [[ -n "$SUCCESS_MESSAGES" ]]; then
   # display_notification "Repositories updated:$SUCCESS_MESSAGES" "Git Push Success" "ALL"
-  ~/github/scripts-public/macos/mac/325-customNotifOn.sh
+  ~/github/dotfiles-latest/scripts/macos/325-customNotifOn.sh
 else
   log_message "INFO" "ALL" "No repositories updated during this run"
 fi
