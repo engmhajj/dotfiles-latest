@@ -74,7 +74,7 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd({ "FocusGained", "FocusLost", "WinEnter", "WinLeave" }, {
   callback = function(ev)
     local active_bg = colors.linkarzu_color10 -- darker background
-    local inactive_bg = colors.linkarzu_color07 -- brighter background
+    local inactive_bg = colors.linkarzu_color25 -- brighter background
     if ev.event == "FocusGained" or ev.event == "WinEnter" then
       -- Active window - darker background
       vim.cmd("hi Normal guibg=" .. active_bg)

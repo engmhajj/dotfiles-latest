@@ -15,7 +15,6 @@ mkdir -p ~/.config/yazi
 mkdir -p ~/.config/btop
 mkdir -p ~/.config/fastfetch
 mkdir -p ~/.config/sesh
-mkdir -p ~/github/skitty
 
 # Create the symlinks I normally use
 # ~/.config dir holds nvim, neofetch, alacritty configs
@@ -106,7 +105,7 @@ create_symlink ~/github/dotfiles-latest/sesh ~/.config/sesh
 
 # # This is on the other repo where I keep my ssh config files
 # I commented this as I don't have access to this repo in all the hosts
-ln -snf ~/github/dotfiles-latest/sshconfig-pers ~/.ssh/config 2>&1 >/dev/null
+#ln -snf ~/github/dotfiles-latest/sshconfig-pers ~/.ssh/config 2>&1 >/dev/null
 
 # # I'm keeping the old manual commands here
 # ln -snf ~/github/dotfiles-latest/zshrc/zshrc-file.sh ~/.zshrc >/dev/null 2>&1

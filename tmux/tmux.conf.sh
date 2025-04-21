@@ -172,10 +172,10 @@ bind - split-window -v
 # ctrl+b , -> rename current window
 # ctrl+b w -> show list of windows and sessions
 unbind p
-bind u select-window -t 1
-bind i select-window -t 2
-bind o select-window -t 3
-bind p select-window -t 4
+bind 1 select-window -t 1
+bind 2 select-window -t 2
+bind 3 select-window -t 3
+bind 4 select-window -t 4
 
 # If you want to use the default meta key, which is 'option' in macos, you have to
 # configure the alacritty 'option_as_alt' option, but that messed up my hyper key,
@@ -405,7 +405,7 @@ bind-key -r C-p run-shell "$tmux_sessionizer ~/github/dotfiles-latest/scripts"
 unbind C-t
 bind-key -r C-t run-shell "$tmux_sessionizer ~/github/obsidian_main"
 unbind 4
-bind-key -r 4 run-shell "$tmux_sessionizer ~/github/containerdata"
+bind-key -r p run-shell "$tmux_sessionizer ~/github/containerdata"
 unbind C-y
 bind-key -r C-y run-shell "$tmux_sessionizer /System/Volumes/Data/mnt/containerdata_nfs"
 unbind C-h
@@ -413,7 +413,7 @@ bind-key -r C-h run-shell "$tmux_sessionizer ~"
 unbind C-m
 bind-key -r C-m run-shell "$tmux_sessionizer ~/github/containerdata-public"
 unbind 3
-bind-key -r 3 run-shell "$tmux_sessionizer ~/github/go"
+bind-key -r o run-shell "$tmux_sessionizer ~/github/go"
 # Leaving this in quotes because iCloud dir has a white space
 unbind C-g
 bind-key -r C-g run-shell "$tmux_sessionizer ~/github/php"
@@ -444,9 +444,9 @@ bind-key -r C-v run-shell "tmux neww $ssh_select"
 unbind C-n
 bind-key -r C-n run-shell "tmux neww $ssh_config_select"
 unbind 1
-bind-key -r 1 run-shell "tmux neww $daily_note"
+bind-key -r n run-shell "tmux neww $daily_note"
 unbind 2
-bind-key -r 2 run-shell "tmux neww $karabiner_rules"
+bind-key -r i run-shell "tmux neww $karabiner_rules"
 unbind 6
 bind-key -r 6 run-shell "tmux neww $colorscheme_selector"
 unbind 7

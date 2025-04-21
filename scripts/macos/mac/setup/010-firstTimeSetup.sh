@@ -32,7 +32,7 @@ noColor="\033[0m"
 
 # User and email that will be used in github for commits
 GIT_USERNAME="engmhajj"
-EMAIL_FILE="$HOME/.eng.mhajj@gmail.com"
+EMAIL_FILE="$HOME/.git_user_email"
 
 # -----------------------------------------------------------------------------
 # -----------------------------------------------------------------------------
@@ -206,13 +206,13 @@ if [ ! -f "$GITHUB_SSH_KEY_FILE" ]; then
 fi
 
 # Check if the personal SSH key file exists, if not, create it
-if [ ! -f "$PERS_SSH_KEY_FILE" ]; then
-  echo -e "# Paste your '$PERS_SSH_KEY_NAME' PRIVATE key below and save" >"$PERS_SSH_KEY_FILE"
-  echo -e "# Also, delete these 3 comments on the top or the key will be invalid" >>"$PERS_SSH_KEY_FILE"
-  echo -e "# Once done modifying this file, save with :wq" >>"$PERS_SSH_KEY_FILE"
-  vim "$PERS_SSH_KEY_FILE"
-  chmod 600 "$PERS_SSH_KEY_FILE"
-fi
+# if [ ! -f "$PERS_SSH_KEY_FILE" ]; then
+#   echo -e "# Paste your '$PERS_SSH_KEY_NAME' PRIVATE key below and save" >"$PERS_SSH_KEY_FILE"
+#   echo -e "# Also, delete these 3 comments on the top or the key will be invalid" >>"$PERS_SSH_KEY_FILE"
+#   echo -e "# Once done modifying this file, save with :wq" >>"$PERS_SSH_KEY_FILE"
+#   vim "$PERS_SSH_KEY_FILE"
+#   chmod 600 "$PERS_SSH_KEY_FILE"
+# fi
 
 # Create the SSH config with a heredoc
 cat >"$SSH_CONFIG_FILE" <<SSHCONFIG
@@ -676,13 +676,13 @@ yarn run build
 echo
 echo -e "${boldPurple}>>>>>>>>>>>>>>>>>>>>>>>>>>${noColor}"
 echo "Creating and populating the LaunchAgent plist for Karabiner..."
-cat <<EOF >~/Library/LaunchAgents/com.engmhajj.karabiner.plist
+cat <<EOF >~/Library/LaunchAgents/com.mohamad.karabiner.plist
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
   <dict>
     <key>Label</key>
-    <string>com.engmhajj.karabiner</string>
+    <string>com.mohamad.karabiner</string>
     <key>ProgramArguments</key>
     <array>
       <string>/opt/homebrew/bin/yarn</string>
@@ -692,9 +692,9 @@ cat <<EOF >~/Library/LaunchAgents/com.engmhajj.karabiner.plist
     <key>RunAtLoad</key>
     <true/>
     <key>StandardOutPath</key>
-    <string>/tmp/karabiner_engmhajj.out.log</string>
+    <string>/tmp/mohamad.out.log</string>
     <key>StandardErrorPath</key>
-    <string>/tmp/karabiner_engmhajj.err.log</string>
+    <string>/tmp/karabiner_mohamad.err.log</string>
     <key>WorkingDirectory</key>
     <string>$HOME/github/dotfiles-latest/karabiner/mxstbr</string>
     <key>EnvironmentVariables</key>
@@ -711,16 +711,16 @@ EOF
 echo
 echo -e "${boldPurple}>>>>>>>>>>>>>>>>>>>>>>>>>>${noColor}"
 echo "Loading LaunchAgent plist..."
-launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.engmhajj.karabiner.plist
+launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.mohamad.karabiner.plist
 
 # Instructions for logs and unloading
 echo -e "
 To check the logs, use:
-cat /tmp/karabiner_engmhajj.out.log
-cat /tmp/karabiner_engmhajj.err.log
+cat /tmp/karabiner_mohamad.out.log
+cat /tmp/karabiner_mohamad.err.log
 
 To unload the task, use:
-launchctl bootout gui/$(id -u) ~/Library/LaunchAgents/com.engmhajj.karabiner.plist
+launchctl bootout gui/$(id -u) ~/Library/LaunchAgents/com.mohamad.karabiner.plist
 
 Then delete the plist file if necessary."
 

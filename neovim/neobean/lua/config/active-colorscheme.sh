@@ -60,4 +60,4 @@ linkarzu_color24="#F712FF"
 linkarzu_color25=#232e3b
 
 # Wallpaper for this colorscheme
-wallpaper="$HOME/Desktop/nvim-config-files/Wallpapers/pirates/thom-schneider.jpg"
+wallpaper="$HOME/Desktop/nvim-config-files/Wallpapers/dragon/dragon.jpg"

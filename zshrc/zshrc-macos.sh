@@ -3,7 +3,7 @@
 # automaticaly push changes to some github repos
 #
 # Check if the com.linkarzu.autoPushGithub.plist file exists, create it if missing
-PLIST_PATH="$HOME/Library/LaunchAgents/com.engmhajj.autoPushGithub.plist"
+PLIST_PATH="$HOME/Library/LaunchAgents/com.mohamad.autoPushGithub.plist"
 SCRIPT_PATH="$HOME/github/dotfiles-latest/scripts/macos/mac/400-autoPushGithub.sh"
 
 # NOTE: If you modify the StartInterval below, make sure to also change it in
@@ -16,7 +16,7 @@ if [ ! -f "$PLIST_PATH" ]; then
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>com.engmhajj.autoPushGithub</string>
+    <string>com.mohamad.autoPushGithub</string>
     <key>ProgramArguments</key>
     <array>
         <string>$SCRIPT_PATH</string>
@@ -38,7 +38,7 @@ fi
 # launchctl list | grep -i autopush
 # First column (-) means the job is NOT currently running. Normal as our script runs every X seconds
 # Second Column (0) means the job ran successfully the last execution, other values mean error
-if ! launchctl list | grep -q "com.engmhajj.autoPushGithub"; then
+if ! launchctl list | grep -q "com.mohamad.autoPushGithub"; then
   echo "Loading $PLIST_PATH..."
   launchctl load "$PLIST_PATH"
   echo "$PLIST_PATH loaded."
@@ -53,7 +53,7 @@ fi
 # 1 hour = 3600 s
 INTERVAL_SEC=7200
 PLIST_ID="tmuxKillSessions"
-PLIST_NAME="com.engmhajj.$PLIST_ID.plist"
+PLIST_NAME="mohamad.$PLIST_ID.plist"
 PLIST_LABEL="${PLIST_NAME%.plist}"
 PLIST_PATH="$HOME/Library/LaunchAgents/$PLIST_NAME"
 SCRIPT_PATH="$HOME/github/dotfiles-latest/tmux/tools/linkarzu/$PLIST_ID.sh"
